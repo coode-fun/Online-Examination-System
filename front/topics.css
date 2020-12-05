@@ -1,0 +1,28 @@
+body {
+    padding: 50px 0px 0px 0px;
+    z-index: 0; 
+}
+  
+.navbar-dark {
+    background-color:  lightseagreen; 
+    
+}
+  
+.row-header {
+    margin: 0px auto;
+    padding: 28px 0px; 
+}
+.row-content {
+    margin: 0px auto;
+    padding: 50px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+td a{
+    color: white;
+}
+.footer {
+    background-color: lightblue;
+    margin: 0px auto;
+    padding: 20px 0px; 
+}

@@ -1,0 +1,217 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+body{
+	margin:0;
+	width:100%;
+}
+.boody{
+
+    width:100%;
+	/* background: url(background2.jpg) no-repeat; */
+	background: url(../image/signup.jpg) no-repeat;
+
+	/* background-color: black; */
+	background-size: 105% 104%;
+	height:605px;
+}
+.message{
+	width:27%;
+	/* padding:10% 33% 10% 33%; */
+	padding:10.2% 33% 0% 41%;
+}
+.box{
+	width:27%;
+	height:40%;
+	/* padding:10% 33% 10% 33%; */
+	padding:1.7% 33% 10% 41%;
+}
+.btn {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  
+}
+
+i{
+	width: 6%;
+	float: left;
+	text-align:center;
+	color: rgb(26, 21, 21);
+}
+
+.signin{
+	width:40%;
+	
+}
+.signup{
+	width:  60%;
+	padding-bottom: 4px;
+	border-bottom: 4px solid rgb(26, 22, 22);
+}
+.signin a{
+	border:none;
+	color:rgb(17, 11, 11);
+	text-decoration: none;
+	display:inline-block ;
+	font-size: 32px;
+	cursor: pointer;
+
+}
+.signup a{
+	border:none;
+	color:rgb(17, 11, 11);
+	padding-left: 30%;
+	text-decoration: none;
+	display:inline-block ;
+	font-size: 32px;
+	cursor: pointer;
+	text-align:end;
+}
+
+.bind{
+	margin-bottom: 10px;
+	padding-bottom: 6px;
+	border-bottom: 1px solid rgb(12, 11, 11);
+	
+}
+
+.bind input{
+	outline: none;
+	border:none;
+	margin-left: 2px;
+	background:none;
+	width: 91%;
+	font-size: 18px;
+	color: rgb(8, 7, 7);
+}
+.submit{
+	margin-top: 10px;
+	font-size: 20px;
+	border:1px solid rgb(15, 15, 15);
+	background:none;
+	color: rgb(12, 10, 10);
+	outline-color: rgb(15, 14, 14);
+	width:100%;
+}
+.link button a{
+	text-decoration:none;
+	background:none;
+	border:none;
+	/* background-color: white; */
+	color: black;
+}
+.link button{
+	width: 70%;
+	height: 50%;
+	margin-left: 15%;
+	position: auto;
+	background:none;
+	outline-color: rgb(12, 12, 12);
+	border:1px solid rgb(19, 17, 17);
+	margin-top: 12px;
+	/* background-color:rgb(248, 215, 215); */
+}
+
+
+/* 
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+body{
+	margin:0;
+}
+.boody{
+	padding-left: 40px;
+    width:100%;
+	background: url(background1.png) no-repeat;
+	background-size: cover;
+	height:624px;
+}
+.box{
+	width:27%;
+	height:40%;
+	padding:10% 33% 10% 53%;
+}
+.btn {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  
+}
+
+i{
+	width: 6%;
+	float: left;
+	text-align:center;
+	color: white;
+}
+
+.signin{
+	width:40%;
+	
+}
+.signup{
+	width:  60%;
+	padding-bottom: 4px;
+	border-bottom: 4px solid white;
+}
+.signin a{
+	border:none;
+	color:white;
+	text-decoration: none;
+	display:inline-block ;
+	font-size: 32px;
+	cursor: pointer;
+
+}
+.signup a{
+	border:none;
+	color:white;
+	padding-left: 30%;
+	text-decoration: none;
+	display:inline-block ;
+	font-size: 32px;
+	cursor: pointer;
+	text-align:end;
+}
+
+.bind{
+	margin-bottom: 10px;
+	padding-bottom: 6px;
+	border-bottom: 1px solid white;
+	
+}
+
+.bind input{
+	outline: none;
+	border:none;
+	margin-left: 2px;
+	background:none;
+	width: 91%;
+	font-size: 18px;
+	color: white;
+}
+.submit{
+	margin-top: 10px;
+	font-size: 20px;
+	border:1px solid white;
+	background:none;
+	color: white;
+	outline-color: white;
+	width:100%;
+}
+.link button a{
+	text-decoration:none;
+	background:none;
+	border:none;
+	background-color: white;
+	color: black;
+}
+.link button{
+	width: 70%;
+	height: 50%;
+	margin-left: 15%;
+	position: auto;
+	background:none;
+	outline-color: white;
+	border:1px solid white;
+	margin-top: 12px;
+	background-color:white;
+} */

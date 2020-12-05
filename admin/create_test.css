@@ -1,0 +1,29 @@
+
+body{
+    margin: 0;
+  
+}
+.row-content{
+    margin: 0px auto;
+    padding-top: 70px;
+}
+
+
+table{
+    width: 95%;
+    table-layout: fixed;
+    margin: 20px auto;
+    
+}
+
+table th{
+   
+    text-align: center;
+}
+table  td{
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    border-collapse: collapse;
+}

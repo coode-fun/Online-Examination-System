@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    width: 100%;
+}
+
+.row-content{
+    background-image: url("../image/home1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:624px;
+}
+a{
+    color: black;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.col{
+    margin: 0px auto;
+    padding: 450px 0 0 1000px;
+    width: 100%;
+}
+.btn{
+    display: inline;
+    width:45%;
+    background-color: rgb(223, 221, 106);
+    
+}

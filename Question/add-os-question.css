@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+}
+
+.row-content{
+    margin: 0px auto;
+    padding-top: 10px;
+}
+table{
+    width: 95%;
+    
+    margin: 20px 30px;
+    
+}
+
+table th{
+    padding-left: 40px;
+    border: 1px solid black;
+   
+}
+table  td{
+    border: 1px solid black;
+    padding-left: 40px;
+}
+.tclass{
+    border-collapse: collapse;
+    border-spacing: 0px;
+    
+}
+
+.section{
+    border-collapse: collapse;
+}
+
+.section-step td{
+    border: 1px solid black;
+}
