@@ -42,3 +42,14 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
     $(target).fadeIn(600);
     
   });
+
+
+
+
+  // create connection
+
+  query="" ///sql comm SELtnECT * From  
+connection= 
+ Connection.quer(query,(err,res)=>{
+
+  })

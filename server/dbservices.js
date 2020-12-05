@@ -8,21 +8,48 @@ let instance=null;
 dotenv.config();
 
 const connection=mysql.createConnection({
-    host:process.env.HOST,
+    host:'localhost',
     user:'root',
-    password:process.env.PASSWORD,
-    database:process.env.DATABASE,
-    port:process.env.DBPORT
+    password:'',
+    database:'webapp',
+    port:3306
 });
 
-connection.connect((err)=>{
-    if(err){ 
+connection.connect((error)=>{
+    if(error){ 
              console.log("Connection failed!!");
-             throw err;
+             throw error;
     }
     else
     console.log("Database "+ process.env.DATABASE +" Successfully connected!!");
 });
+
+
+var query="SELECT * FROM USER;";
+
+connection.query(query,(err,result)=>{
+
+    if(err)
+    {
+        console.log("THere is error in your query ");
+    }
+    else{
+        console.log(result);
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class Dbservice{
 
