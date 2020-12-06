@@ -25,38 +25,23 @@ connection.connect((error)=>{
 });
 
 
-var query="SELECT * FROM USER;";
-
-connection.query(query,(err,result)=>{
-
-    if(err)
-    {
-        console.log("THere is error in your query ");
-    }
-    else{
-        console.log(result);
-    }
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Dbservice{
 
     static getDbServiceInstance()
     {
         return instance?instance:new Dbservice();
     }
+    async verified(id)
+    {
+        try{
+
+
+        }
+        catch{
+
+        }
+    }
+
     async getAllData(){
         try{
             console.log("Hello");
@@ -178,19 +163,41 @@ class Dbservice{
     async verified(id)
     {
         try{
-              var response=new Promise((resolve,reject)=>{
-
                 var query=`UPDATE Users  SET verified=true WHERE Id=${id}`;
                 connection.query(query,(err,result)=>{
-
+              
                 });
-                
-              });
         }
         catch{
 
         }
     }
+    async logedout(id)
+    {
+        try{
+                var query=`UPDATE Users  SET verified=true WHERE Id=${id}`;
+                connection.query(query,(err,result)=>{
+
+                });
+        }
+        catch{
+
+        }
+    }
+    
+    async logedin(id)
+    {
+        try{
+                var query=`UPDATE Users  SET verified=true WHERE Id=${id}`;
+                connection.query(query,(err,result)=>{
+
+                });
+        }
+        catch{
+
+        }
+    }
+    
     async authenticate(body){
         try{           
             
@@ -211,10 +218,18 @@ class Dbservice{
                       if(result.length >0){
                          var decryptedString = cryptr.decrypt(result[0].Password);
                           if(password===decryptedString){
-                              resolve({
-                                  status:true,
-                                  message:'successfully authenticated'
-                              })
+                              if(result[0].verified)
+                              {
+                                resolve({
+                                      status:true,
+                                      message:'successfully authenticated'
+                                })
+                              }else{
+                                  resolve({
+                                      status:false,
+                                      message:'Registered but your account is not activated yet.Check your mail to activate.'
+                                  })
+                              }
                           }else{
                               resolve({
                                 status:false,

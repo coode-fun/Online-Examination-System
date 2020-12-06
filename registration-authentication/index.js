@@ -45,8 +45,6 @@ if(register)
           {
               message.innerHTML=data.message;
               message.style.color="green";
-              
-              fetch('http://localhost:5000/register')
 
           }
           else{
@@ -54,9 +52,6 @@ if(register)
             message.style.color="red";
           }
        });
-
-
-
 
     });
 }
@@ -84,7 +79,7 @@ if(signin)
            method:'POST',
             body:  JSON.stringify(data)
        })
-       .then(data=>data.json())
+       .then(data=>data.json()).
        .then(data=>console.log(data.message));
     })
 }

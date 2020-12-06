@@ -27,14 +27,14 @@ app.post('/insert',(req,res)=>{
 
 });
 
-app.get('/',(req,res)=>{
+app.get('./login',(req,res)=>{
 
-   var paath=path.join(__dirname,'../registration-authentication/signin_page.html');
+   var paath=path.join(__dirname,'../front/account-verified');
    console.log(paath);
    res.sendFile(paath);
   // res.send("hello");
-
 });
+
 
 app.get('/getAll',(req,res)=>{
 
@@ -48,6 +48,9 @@ app.get('/getAll',(req,res)=>{
 app.get('/verify/:id',(req,res)=>{
 
     console.log(req.body);
+    const id=req.params.id;
+    const db=dbservices.getDbServiceInstance();
+          db.verified(id);
     res.redirect("/");   
 });
 
