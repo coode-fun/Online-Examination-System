@@ -1,0 +1,31 @@
+var nodemailer = require('nodemailer');
+
+module.exports=function Mailed(email,id)
+{
+  console.log(email);
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+    user: 'gbye8334@gmail.com',
+    pass: 'Changeaditya@123'
+    // user:'yout67899@gmail.com',
+    // pass:'Youtube@123'
+  }
+});
+
+var mailOptions = {
+  from: 'gbye8334@gmail.com',
+  to: `${email}`,
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!',
+  html: `<h1>Welcome</h1><p>That was easy!</p><p><a href='http://localhost:5000/verify/${id}'>CLICK TO ACTIVATE</p>`
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log("Email not sent , may be issue with internet connection.");
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+}
