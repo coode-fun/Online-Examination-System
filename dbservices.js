@@ -7,23 +7,14 @@ var mailed=require('./email-verification.js')
 let instance=null;
 dotenv.config();
 
-// const pool=mysql.createPool({
-//     host:'localhost',
-//     user:'root',
-//     password:'',
-//     database:'webapp',
-//     port:3306
-// });
-
-var pool=mysql.createPool({
-    connectionLimit : 10,
-    host:"us-cdbr-east-02.cleardb.com",
-    user:"be15d5c9f7b69b",
-    password:"6c3e392d",
-    database:"heroku_a64a5af2732d9a0",
-    debug    :  false,
+const pool=mysql.createPool({
+    host:'localhost',
+    user:'root',
+    password:'',
+    database:'webapp',
     port:3306
 });
+
 
 
 pool.getConnection((err,connection)=>{

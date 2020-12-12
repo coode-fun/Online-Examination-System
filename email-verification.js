@@ -7,9 +7,8 @@ module.exports=function Mailed(email,id)
     service: 'gmail',
     auth: {
     user: 'gbye8334@gmail.com',
-    pass: '7gw_#&!GWs6'
-    // user:'yout67899@gmail.com',
-    // pass:'Youtube@123'
+    pass: process.env.EMAILPASSWORD
+   
   }
 });
 
