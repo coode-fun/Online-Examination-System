@@ -8,8 +8,6 @@ module.exports=function Mailed(email,id)
     auth: {
     user: 'gbye8334@gmail.com',
     pass: 'Changeaditya@123'
-    // user:'yout67899@gmail.com',
-    // pass:'Youtube@123'
   }
 });
 
