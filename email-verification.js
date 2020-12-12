@@ -18,7 +18,7 @@ var mailOptions = {
   to: `${email}`,
   subject: 'Sending Email using Node.js',
   text: 'That was easy!',
-  html: `<h1>Welcome</h1><p>That was easy!</p><p><a href='http://localhost:5000/verify/${id}'>CLICK TO ACTIVATE</p>`
+  html: `<h1>Welcome</h1><p>That was easy!</p><p><a href='https://online-exam-2020.herokuapp.com/verify/${id}'>CLICK TO ACTIVATE</p>`
 };
 
 transporter.sendMail(mailOptions, function(error, info){
