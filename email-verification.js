@@ -7,7 +7,7 @@ module.exports=function Mailed(email,id)
     service: 'gmail',
     auth: {
     user: 'gbye8334@gmail.com',
-    pass: 'Changeaditya@123'
+    pass: '**************'
   }
 });
 
