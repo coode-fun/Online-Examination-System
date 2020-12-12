@@ -3,12 +3,20 @@ const dbservices=require('./dbservices');
 const cors=require('cors');
 const fs=require('fs');
 const path=require('path');
+const hbs=require("hbs");
+// const { request } = require('https');
+// const { response } = require('express');
 
 const app=express();
 app.use(cors());
 app.use(express.json()); //file sharing in jason format
 app.use(express.urlencoded({extended : false}));
 app.use(express.static(path.join(__dirname,"/public")));
+
+//app.set('views', path.join(__dirname));
+// app.engine('hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
+app.set('view engine', 'hbs');
+
 
 app.post('/insert',(req,res)=>{
 
@@ -25,17 +33,8 @@ app.post('/insert',(req,res)=>{
     .catch(err=>{console.log(err,"error from /insert catch")});
 });
 
-// app.get("/",(req,res)=>{
-//     if(!req.body)
-//     {
-//         res.status(400);
-//         res.send("Error 400!");
-//     }
-//    var p=path.join(__dirname,'./home/admin-user.html');
-//    res.sendFile(p);
-//    // res.render("./index.html");
-// })
 app.get("/home/admin-user.html",(req,res)=>{});
+app.get("/registration-authentication/signin_page.html",(req,res)=>{});
 
 app.get('/', function(req, res){ 
     if(!req.body)
@@ -56,8 +55,6 @@ app.get('/', function(req, res){
     //     } 
     // }); 
     res.redirect("/home/admin-user.html");
-    
-    
 });
 app.get('/front/account-verified.html',(req,res)=>{
     if(!req.body)
@@ -112,6 +109,7 @@ app.delete("/delete/:Id",(request,response)=>{
     }
     const id=request.params.Id;
     const db = dbservices.getDbServiceInstance();
+
     const result = db.deleteData(id);
     result
     .then(data => response.json({ success: data}))
@@ -133,6 +131,78 @@ app.post("/register",(req,res)=>{
     .catch(err=>{console.log(err,"error from /insert catch")}); 
 });
 
+app.get("/user-login/:id",(request,response)=>{
+    const id=request.params.id;
+    const db=dbservices.getDbServiceInstance();
+       
+    db.logedin(id)
+    .catch(err=>{console.log(err)});
+    response.redirect(`/user-profile/${id}`);
+});
+app.get("/user-logout/:id",(request,response)=>{
+    const id=request.params.id;
+    const db=dbservices.getDbServiceInstance();
+    
+    db.isactive(id)
+    .then(active=>{
+        console.log(active);
+        if(active)
+        {
+            db.logedout(id)
+            .catch(err=>{console.log(err," Something wrong with logedout function inside user-logout route")});
+            response.redirect(`/home/admin-user.html`);   
+        }else{
+            response.redirect("/registration-authentication/signin_page.html");
+        }
+    })
+    .catch(err=>console.log("Something wrong with isactive function inside user-logout function"));
+});
+// app.get("/userlogout/:email",(request,response)=>{
+//     const email=request.params.email;
+//     const db=dbservices.getDbServiceInstance();
+    
+//     db.isactive(eamil)
+//     .then(active=>{
+//         console.log(active);
+//         if(active)
+//         {
+//             db.logedout(id)
+//             .catch(err=>{console.log(err," Something wrong with logedout function inside user-logout route")});
+//             response.redirect(`/home/admin-user.html`);   
+//         }else{
+//             response.redirect("/registration-authentication/signin_page.html");
+//         }
+//     })
+//     .catch(err=>console.log("Something wrong with isactive function inside user-logout function"));
+// });
+
+app.get("/user-profile/:id",(request,response)=>{
+    const id=request.params.id;
+    const db=dbservices.getDbServiceInstance();
+
+    db.isactive(id)
+    .then(active=>{
+        if(active)
+        {
+            const details=db.userDetails(id)
+           .then(data=>{
+                var name=data.info.Fname+" "+data.info.Lname;
+                response.render("profile_user.hbs",{
+                    username:name ,email:data.info.Email,fname:data.info.Fname,lname:data.info.Lname,userid:id
+                }); 
+            })
+            .catch(err=>{
+                console.log("Error from user-login ");
+                response.status(404).send("Something went wrong!!");
+            })   
+        }
+        else{
+            response.redirect("/registration-authentication/signin_page.html");
+        }
+    })
+    .catch(err=>response.status(400).send("Something went wrong!"));
+})
+
 app.post("/authenticate",(req,res)=>{
 
     if(!req.body)
@@ -145,8 +215,7 @@ app.post("/authenticate",(req,res)=>{
     const result=db.authenticate(req.body);
     result
     .then(data=>{
-        console.log(data);
-        res.json(data);
+        res.json({data:data});
     })
     .catch(err=>{console.log(err,"error from /insert catch")});
 });
