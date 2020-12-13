@@ -7,34 +7,26 @@ var mailed=require('./email-verification.js')
 let instance=null;
 dotenv.config();
 
-// const pool=mysql.createPool({
-//     host:'localhost',
-//     user:'root',
-//     password:'',
-//     database:'webapp',
-//     port:3306
-// });
-
-var pool=mysql.createPool({
-    connectionLimit : 10,
-    host:process.env.HOST,
-    user:process.env.USER,
-    password:process.env.PASSWORD,
-    database:process.env.DATABASE,
-    debug    :  false,
+const pool=mysql.createPool({
+    host:'localhost',
+    user:'root',
+    password:'',
+    database:'webapp',
     port:3306
 });
 
-// pool.connect((error)=>{
-//     if(error){ 
-//              console.log("Connection failed!!");
-//              throw error;
-//     }
-//     else
-//     console.log("Database  Successfully connected!!");
 
-// });
 
+pool.getConnection((err,connection)=>{
+    if(err)
+    {
+        console.log("connection failed!! May be poor internet connection.");
+    }
+    else
+    {
+        console.log("Successfully connected!");
+    }
+});
 
 class Dbservice{
 
@@ -42,7 +34,99 @@ class Dbservice{
     {
         return instance?instance:new Dbservice();
     }
-    
+
+    // async sample(){
+    //     try{
+    //         console.log("Hello");
+    //          const response= await new Promise((resolve,reject)=>{
+    //          });
+    //         }
+    //         catch(error){
+    //             console.log(error);
+    //         }   
+    //     } 
+    async isactive(id){
+        try{
+             const response= await new Promise((resolve,reject)=>{
+                 pool.getConnection((err,connection)=>{
+                     if(err){
+                         console.log("Error in isactive function!");
+                         reject(false);
+                     }
+                     else{
+                        connection.query(`SELECT Active from users WHERE Id=${id}`,(err,result)=>{
+                            if(err)
+                            {
+                                console.log("Something wrong with query in isactive function!!");
+                                reject(false);
+                            }
+                            else{
+                                if(result.length>0)
+                                {
+                                    if(result[0].Active)
+                                    {
+                                         resolve(true);
+                                    }
+                                    else{
+                                         resolve(false);
+                                    }
+                                }
+                                else
+                                {
+                                    resolve(false);
+                                }
+                            }
+                       });
+                    }
+                 })
+             });
+             return response;
+            }
+            catch(error){
+                console.log(error);
+            }   
+        } 
+        // async isActiveByEmail(email){
+        //     try{
+        //          const response= await new Promise((resolve,reject)=>{
+        //              pool.getConnection((err,connection)=>{
+        //                  if(err){
+        //                      console.log("Error in isactive function!");
+        //                      reject(false);
+        //                  }
+        //                  else{
+        //                     connection.query(`SELECT Active from users WHERE Email=${email}`,(err,result)=>{
+        //                         if(err)
+        //                         {
+        //                             console.log("Something wrong with query in isactive function!!");
+        //                             reject(false);
+        //                         }
+        //                         else{
+        //                             if(result.length>0)
+        //                             {
+        //                                 if(result[0].Active)
+        //                                 {
+        //                                      resolve(true);
+        //                                 }
+        //                                 else{
+        //                                      resolve(false);
+        //                                 }
+        //                             }
+        //                             else
+        //                             {
+        //                                 resolve(false);
+        //                             }
+        //                         }
+        //                    });
+        //                 }
+        //              })
+        //          });
+        //          return response;
+        //         }
+        //         catch(error){
+        //             console.log(error);
+        //         }   
+        //     }     
     async getAllData(){
         try{
             console.log("Hello");
@@ -67,7 +151,7 @@ class Dbservice{
                    });
                 });
              });
-             console.log(response);
+           
              return response;
         }
         catch(error){
@@ -255,6 +339,8 @@ class Dbservice{
     async logedin(id)
     {
         try{
+            console.log(id,"from logedin");
+            const response=await new Promise((resolve,reject)=>{
             var query=`UPDATE Users  SET active=true WHERE Id=${id}`;
             pool.getConnection((err,connection)=>{
                 if(err)
@@ -265,13 +351,16 @@ class Dbservice{
                     if(err)
                     { 
                         console.log(err);
+                        resolve(false);
                     }
                     else
                     {
-                        console.log(result);
+                        console.log("Activated!");
+                        resolve(true);
                     }
                 });
             });
+         });   
         }
         catch(err){
             console.log(err);
@@ -288,6 +377,9 @@ class Dbservice{
                     console.log("Error inside authenticate function");
                 }    
                 var query='SELECT * FROM users WHERE Email = ?';
+                var email=body.emailvalue;
+              
+                var password=body.passwordvalue;
                 connection.query(query,[email],(err,result)=>{
                     if (err) {
                         resolve({
@@ -296,14 +388,16 @@ class Dbservice{
                         })
                     }
                     else{
+                        
                         if(result.length >0){
                             var decryptedString = cryptr.decrypt(result[0].Password);
                             if(password===decryptedString){
-                                if(result[0].verified)
+                                if(result[0].Verified)
                                 {
                                     resolve({
                                         status:true,
-                                        message:'successfully authenticated'
+                                        message:'successfully authenticated',
+                                        info:result[0]
                                     })
                                 }
                                 else{
@@ -330,11 +424,56 @@ class Dbservice{
                   });
             });
         });
-        console.log(response);
+        
         return response;            
     } 
     catch(error){
             console.log(error);
+        }
+    }
+    async userDetails(id){
+        try{           
+            const response=await new Promise((resolve,reject)=>{
+                
+            pool.getConnection((err,connection)=>{
+                if(err)
+                {
+                    console.log("Error inside authenticate function");
+                }    
+                var query='SELECT * FROM users WHERE Id = ?';
+                connection.query(query,[id],(err,result)=>{
+                    if (err) {
+                        resolve({
+                             status:false,
+                             message:'there are some error with query',
+                             info : "Nothing found"
+                        })
+                    }
+                    else{
+                        if(result.length>0){
+                            
+                            resolve({
+                                status:true,
+                                message:'successfully authenticated',
+                                info:result[0]
+                            })
+                        }
+                        else{
+                            console.log(result.length,"Hello from");
+                            resolve({
+                                status:false,
+                                message:'something went wrong',
+                                info : "Nothing found"
+                            })
+                        }
+                    }                
+                });
+            });
+        });
+        return response;            
+    } 
+    catch(error){
+            console.log(error,"Error from getDetails");
         }
     }
 }

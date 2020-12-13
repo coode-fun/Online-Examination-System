@@ -111,6 +111,7 @@ body{
     background-size: cover;
     height:624px;
 } */
+
 .message{
 	width:27%;
 	/* padding:10% 33% 10% 33%; */
@@ -136,7 +137,8 @@ body{
 .box{
 	width:27%;
 	height:40%;
-	padding:13% 33% 10% 41%;
+	/* padding:13% 33% 10% 41%; */
+	padding:1.7% 33% 10% 41%;
 }
 .btn {
   width: 100%;

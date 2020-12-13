@@ -12,7 +12,7 @@
         <!-- build:css css/main.css -->
         <link rel="stylesheet" href="../css/bootstrap.min.css">
     
-        <link rel="stylesheet" href="profile_user.css">
+        {{!-- <link rel="stylesheet" href="./profile_user.css"> --}}
     </head>
     <body>
         <div class="container">
@@ -22,9 +22,10 @@
                   <nav aria-label="breadcrumb" class="main-breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                        <li class="breadcrumb-item active" aria-current="page">User ID : <span id="user-id">{{userid}}</span></li>
+                        
                         <li class="breadcrumb-item"><a href="../front/topics.html">Exam</a></li>
-                        <li class="breadcrumb-item"><a href="../registration-authentication/signin_page.html">Login</a></li>
-                        <li class="breadcrumb-item"><a href="../home/admin-user.html">Logout</a></li>
+                        <li class="breadcrumb-item" id="logout-btn">Logout</li>
                     </ol>
                   </nav>
                  
@@ -37,7 +38,7 @@
                           <div class="d-flex flex-column align-items-center text-center">
                             <img src="../image/profile.jpg" alt="Admin" class="rounded-circle" width="150">
                             <div class="mt-3">
-                              <h4>Aditya Singh</h4>
+                              <h4>{{username}}</h4>
                               <p class="text-secondary mb-1">3rd Year B.Tech Student</p>
                               <p class="text-muted font-size-sm">Shibpur, Howrah, West Bengal</p>
                               <button class="btn btn-primary">Follow</button>
@@ -79,7 +80,7 @@
                               <h6 class="mb-0">First Name</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                              Sayani
+                              {{fname}}
                             </div>
                           </div>
                           <hr>
@@ -88,7 +89,7 @@
                               <h6 class="mb-0">Last Name</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                              Ghosh
+                              {{lname}}
                             </div>
                           </div>
                           <hr>
@@ -97,7 +98,7 @@
                               <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                              sayanighosh53498@gmail.com
+                              {{email}}
                             </div>
                           </div>
                           <hr>
@@ -106,7 +107,7 @@
                               <h6 class="mb-0">Mobile</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                              +91 6296786302
+                              +91 987654321
                             </div>
                           </div>
                           <hr>
@@ -180,5 +181,14 @@
                   </div>
                 </div>
             </div>
+            <script>
+              logout=document.querySelector("#logout-btn");
+              logout.onclick=()=>{
+                var id=document.querySelector("#user-id").value;
+                 
+                window.location.replace(`https://online-exam-2020.herokuapp.com/user-login/${id}`);
+              }
+
+            </script>
     </body>
 </html>

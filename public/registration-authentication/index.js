@@ -33,7 +33,7 @@ if(register)
        }
       // console.log(data);
 
-       fetch("http://localhost:5000/register",{
+       fetch("https://online-exam-2020.herokuapp.com/register",{
            headers:{'content-type':'application/json'},
            method:'POST',
             body:  JSON.stringify(data)
@@ -45,7 +45,6 @@ if(register)
           {
               message.innerHTML=data.message;
               message.style.color="green";
-
           }
           else{
             message.innerHTML=data.message;
@@ -65,7 +64,6 @@ if(signin)
     
     signin.addEventListener("click",()=>{
 
-        console.log("Hello from sign in !!");
         const email=document.querySelector("#email-id");
         const password=document.querySelector("#password-id");
 
@@ -75,15 +73,25 @@ if(signin)
                         passwordvalue:password.value
        }
 
-       console.log(data);
-
-       fetch("http://localhost:5000/authenticate",{
+       fetch("https://online-exam-2020.herokuapp.com/authenticate",{
            headers:{'content-type':'application/json',
                     'Accept': 'application/json'},
            method:'POST',
             body:  JSON.stringify(data)
        })
        .then(data=>data.json())
-       .then(data=>console.log(data.message));
+       .then(data=>{
+           data=data.data;
+        
+           if(data.status)
+           {
+               window.location.href=`https://online-exam-2020.herokuapp.com/user-login/${data.info.Id}`;
+           }else{
+                message=document.querySelector(".message");
+                message.innerHTML=data.message;
+                message.style.color="red";
+           }
+        })
+        .catch(err=>{console.log("Error in response :http://localhost:5000/authenticate  ")});
     })
 }
