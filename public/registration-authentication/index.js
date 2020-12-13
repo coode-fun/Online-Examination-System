@@ -33,7 +33,7 @@ if(register)
        }
       // console.log(data);
 
-       fetch("https://online-exam-2020.herokuapp.com/register",{
+       fetch("http://localhost:5000/register",{
            headers:{'content-type':'application/json'},
            method:'POST',
             body:  JSON.stringify(data)
@@ -73,7 +73,7 @@ if(signin)
                         passwordvalue:password.value
        }
 
-       fetch("https://online-exam-2020.herokuapp.com/authenticate",{
+       fetch("http://localhost:5000/authenticate",{
            headers:{'content-type':'application/json',
                     'Accept': 'application/json'},
            method:'POST',
@@ -85,7 +85,7 @@ if(signin)
         
            if(data.status)
            {
-               window.location.href=`https://online-exam-2020.herokuapp.com/user-login/${data.info.Id}`;
+               window.location.href=`http://localhost:5000/user-login/${data.info.Id}`;
            }else{
                 message=document.querySelector(".message");
                 message.innerHTML=data.message;

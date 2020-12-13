@@ -39,7 +39,7 @@ function reloadTable()
 const addbtn=document.querySelector('#button-id');
 
 addbtn.addEventListener('click',()=>{
-    console.log("Hhhhhhhhhhhhhhhhh");
+    
   const question_obj=document.querySelector('#question');
   const option1_obj=document.querySelector('#option1');
   const option2_obj=document.querySelector('#option2');
