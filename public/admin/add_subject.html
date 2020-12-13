@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Subject</title>
-    <link rel="stylesheet" href="./add_subject.css">
+    <link rel="stylesheet" href="../admin/add_subject.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css"> 
-    <link ref="stylesheet" href="../css/bootstrap-social.css">
-    
+     <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+     <link ref="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css.map">
+     
 </head>
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -18,8 +18,9 @@
             </button>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="../front/admin_profile.html"><span class="fa fa-user fa-lg"></span> Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../admin/admin_profile.html"><span class="fa fa-user fa-lg"></span> Profile</a></li>
                         <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-book fa-lg"></span>Test</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../admin/notification.html"><span class="fa fa-bell fa-lg"></span> Notification</a></li>
                         
                 </ul>
                 <span class="navbar-text">
@@ -37,7 +38,13 @@
             </div>
             <div class="col-12 col-md-9">
                 <form>
-                    
+                    <div class="form-group row">
+                        <label for="subject_code" class="col-md-2" class="col-form-label"><h6>subject Code:</h6></label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" id="subject_code" name="subject_code" rows="1"
+                                placeholder="Subject_code" required></textarea>
+                        </div>
+                    </div> 
                     <div class="form-group row">
                         <label for="subject" class="col-md-2" class="col-form-label"><h6>Subject:</h6></label>
                         <div class="col-md-10">
@@ -46,13 +53,12 @@
                         </div>
                     </div> 
                     <div class="form-group row">
-                        <label for="subject_code" class="col-md-2" class="col-form-label"><h6>subject Code:</h6></label>
+                        <label for="subject_code" class="col-md-2" class="col-form-label"><h6>Writer</h6></label>
                         <div class="col-md-10">
-                            <textarea class="form-control" id="subject_code" name="subject_code" rows="1"
-                                placeholder="Subject_code" required></textarea>
+                            <textarea class="form-control" id="writer" name="writer" rows="1"
+                                placeholder="Writer" required></textarea>
                         </div>
                     </div> 
-                    
                     <div class="form-group row">
                         <div class="offset-md-2 col-md-10">
                             <button type="submit" class="btn btn-primary">
@@ -70,7 +76,6 @@
                     <tr>
                     <th>Subject</th>
                     <th>Subject Code</th>
-                   
                     <th>Test</th>
                     <th>Delete Subject</th>
                     <th>Edit</th>
@@ -78,14 +83,17 @@
                 </thead>
             
                 <tbody>
-                    
+                    <td>OS</td>
+                    <td>IT-501</td>
+                    <td><button class="btn btn-success"><a href="../front/create_test.html">Create test</a></button></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                    <td><button class="btn btn-secondary">Edit</button></td>
                 </tbody>
             
             </table>  
         
         </section>    
     </div>
-    <script src="../OS/osquestion.js"></script>
     
 </body>
 </html>

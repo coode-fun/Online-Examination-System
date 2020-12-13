@@ -3,15 +3,11 @@ body{
     margin: 0;
   
 }
+
 .row-content{
     margin: 0px auto;
-    padding-top: 70px;
+    padding-top: 60px;
 }
-
-.navbar-dark {
-    background-color: skyblue; 
-}
-
 table{
     width: 95%;
     table-layout: fixed;
@@ -30,3 +26,13 @@ table  td{
     text-align: center;
     border-collapse: collapse;
 }
+.navbar-dark {
+    background-color: skyblue; 
+}
+
+
+
+
+
+
+

@@ -18,7 +18,7 @@ table{
 }
 
 table th{
-   
+    align-items: center;
     text-align: center;
 }
 table  td{
@@ -27,4 +27,13 @@ table  td{
     padding-right: 10px;
     text-align: center;
     border-collapse: collapse;
+    align-items: center;
+}
+
+td a{
+    color: white;
+}
+
+td a:hover{
+    color: yellow;
 }
