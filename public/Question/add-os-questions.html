@@ -1,186 +1,46 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OS Question</title>
-</head>
-<body>
-
-    <div>
-        <div class="question-div">
-            <lable>Question :</lable>
-            <input type="text" name='Question' size="100">
-        </div>
-        <div class="option1-div">
-            <lable>Option1: </lable>
-            <input type="text" name='Option1'>
-        </div>
-        <div class="option2-div">
-            <lable>Option2: </lable>
-            <input type="text" name='Option2'>
-        </div>
-        <div class="option3-div">
-            <lable>Option3 : </lable>
-            <input type="text" name='Option3'>
-        </div>
-        <div class="option4-div">
-            <lable>Option4 : </lable>
-            <input type="text" name='Option4'>
-        </div>
-        <div class="correct-div">
-            <lable>Correct Option : </lable>
-            <input type="text" name='Correct'>
-        </div>
-        <div class="button-div">
-            <button >Add Question</button>
-        </div>
-    </div>
-    <table class="table-class">
-        <thead class="thead-class">
-          <tr>
-              <th>Question</th>
-              <th>Option1</th>
-              <th>Option2</th>
-              <th>Option3</th>
-              <th>Option4</th>
-              <th>Correct</th>
-              <th>Delete</th>
-              <th>Edit</th>
-          </tr>
-        </thead>
-        <tbody class="tbody-class">
-
-        </tbody>
-    </table>
-    <script src="add-os-question.js"></script>
-    
-</body>
-</html> -->
-
- <!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OS Question</title>
-    <link rel="stylesheet" href="C:\Users\Aditya Singh\Desktop\online examinaion system\Online-Examination-System-master\Question\add-os-question.css">
-    <link rel="stylesheet" href="C:\Users\Aditya Singh\Desktop\online examinaion system\Online-Examination-System-master\node-module\css\bootstrap.min.css">
-    <link rel="stylesheet" href="C:\Users\Aditya Singh\Desktop\online examinaion system\Online-Examination-System-master\node-module\font-awesome.min.css"> 
-    <link ref="stylesheet" href="C:\Users\Aditya Singh\Desktop\online examinaion system\Online-Examination-System-master\node-module\bootstrap-social.css">
-    
-</head>
-<body>
-    <div class="container">
-    <div class="row row-content">
-        <div class="col-12">
-           <h4>Add Questions here</h4>
-        </div>
-         <div class="col-12 col-md-9">
-             <form>
-                 <div class="form-group row">
-                     <label for="question" class="col-md-2" class="col-form-label"><h6>Question:</h6></label>
-                     <div class="col-md-10">
-                         <textarea class="form-control" id="question" name="question" rows="2"
-                            placeholder="Question"></textarea>
-                     </div>
-                 </div> 
-                 <div class="form-group row">
-                     <label for="option1" class="col-md-2" class="col-form-label"><h6>Option1:</h6></label>
-                     <div class="col-md-10">
-                         <textarea class="form-control" id="option1" name="option1" rows="1"
-                             placeholder="Option 1"></textarea>
-                     </div>
-                 </div> 
-                 <div class="form-group row">
-                    <label for="option2" class="col-md-2" class="col-form-label"><h6>Option2:</h6></label>
-                    <div class="col-md-10">
-                        <textarea class="form-control" id="option2" name="option2" rows="1"
-                            placeholder="Option 2"></textarea>
-                    </div>
-                 </div> 
-                 <div class="form-group row">
-                    <label for="option3" class="col-md-2" class="col-form-label"><h6>Option3:</h6></label>
-                    <div class="col-md-10">
-                        <textarea class="form-control" id="option3" name="option3" rows="1"
-                            placeholder="Option 3"></textarea>
-                    </div>
-                 </div> 
-                 <div class="form-group row">
-                    <label for="option4" class="col-md-2" class="col-form-label"><h6>Option4:</h6></label>
-                    <div class="col-md-10">
-                        <textarea class="form-control" id="option4" name="option4" rows="1"
-                            placeholder="Option 4"></textarea>
-                    </div>
-                 </div>
-                 <div class="form-group row">
-                    <label for="answer" class="col-md-2" class="col-form-label"><h6>Correct option:</h6></label>
-                    <div class="col-md-10">
-                        <textarea class="form-control" id="answer" name="answer" rows="1"
-                            placeholder="Answer"></textarea>
-                    </div>
-                 </div>
-                 <div class="form-group row">
-                     <div class="offset-md-2 col-md-10">
-                         <button type="submit" class="btn btn-primary" id="button-id">
-                             Add Question
-                         </button> 
-                     </div>
-                 </div>
-            </form>
-        </div>
-    </div>
-    </div>
-    <table class="tclass" class="table table-striped">
-        <thead>
-            <tr>
-              <th>Question</th>
-              <th>Option 1</th>
-              <th>Option 2</th>
-              <th>Option 3</th>
-              <th>Option 4</th>
-              <th>Answer</th>
-              <th>Delete</th>
-              <th>Edit</th>
-            </tr>
-        </thead>
-        <tbody class="section section-step" id="tbody-id">
-            <tr></tr>
-            
-        </tbody>
-    </table>    
-    
-    <script src="add-os-question.js"></script>
-    
-</body>
-</html> --> 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OS Question</title>
-    <link rel="stylesheet" href="./add-os-question.css">
+    <title>Question</title>
+    <link rel="stylesheet" href="../admin/add_questiion.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css"> 
-    <link ref="stylesheet" href="../css/bootstrap-social.css">
-
+     <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+     <link ref="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css.map">
+     
 </head>
 <body>
 <div class="container">
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="../admin/admin_profile.html"><span class="fa fa-user fa-lg"></span> Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../admin/add_subject.html"><span class="fa fa-book fa-lg"></span> Create_Test</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-question-circle fa-lg"></span> Questions</a></li>
+                </ul>
+                <span class="navbar-text">
+                    <a href="../home/admin-user.html">
+                        <span class="fa fa-sign-in"></span> Logout
+                    </a>
+                </span>
+            </div>
+        </div>
+    </nav>
     <div class="row row-content">
         <div class="col-12">
-           <h4>Add Questions here</h4>
+           <h4>Add Questions</h4>
         </div>
-         <div class="col-12 col-md-9">
+        <div class="col-12 col-md-9">
              <form>
                  <div class="form-group row">
                      <label for="question" class="col-md-2" class="col-form-label"><h6>Question:</h6></label>
                      <div class="col-md-10">
-                         <textarea class="form-control" id="question" name="question" rows="2"
+                         <textarea class="form-control" id="question" name="question" rows="1"
                             placeholder="Question"></textarea>
                      </div>
                  </div> 
@@ -221,17 +81,18 @@
                  </div>
                  <div class="form-group row">
                      <div class="offset-md-2 col-md-10">
-                         <button type="submit" class="btn btn-primary" id="button-id">
+                         <button type="submit" class="btn btn-primary">
                              Add Question
                          </button> 
                      </div>
                  </div>
             </form>
         </div>
+        
     </div>
     <section>
       
-        <table class="table table-striped" class="tclass">
+        <table class="table table-striped">
             <thead>
                 <tr>
                 <th>Question</th>
@@ -245,7 +106,7 @@
                 </tr>
             </thead>
         
-            <tbody id="tbody-id">
+            <tbody>
                 
             </tbody>
         
@@ -253,10 +114,6 @@
       
     </section>    
 </div>
-
-
-    </div>
-    <script src="add-os-question.js"></script>
-    
+<script src="../Question/add-os-question.js"></script>
 </body>
 </html>
