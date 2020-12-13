@@ -1,98 +1,50 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Sign_In</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="signin_page.css">
-
-
-</head>
-<body>
-		
-					<div class="link">
-						<button type="button" class="submit" name="button" id="signin-btn">SignIn</button>        
-					</div>
-	
-<script src="signin.js"></script>
-</body>
-</html>
- -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Sign_In</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="signin_page.css">
-	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-
-	<!-- <script type="text/javascript">
-		function validate(){
-			var username = document.getElementById("username");
-			var password = document.getElementById("password");
-			// if(username.value.trim()=="" ){
-			// 	alert("Blank username/email");
-			// 	username.style.border="solid 3px red";
-			// 	return false;
-			// }
-			// else if(password.value.trim()==""){
-			// 	alert("Blank password");
-			// 	return false;
-			// }
-			if(password.value.trim().length<6){
-				alert("Password is too short");
-				return false;
-			}
-			// else{
-			// 	return true;
-			// }
-
-			var text = document.getElementById()
-		}
-	</script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../registration-authentication/signin_page.css">
 </head>
 <body>
-
-<div class="boody">
-	
-	<div class="box">
-		<div class="btn">
-			<div class="signin" >
-				<a href="#" >SignIn</a>
-			</div>
-			<div class="signup">
-			<a href="signup_page.html">SignUp</a>
-			</div>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 login-section-wrapper">
+          <div class="brand-wrapper">
+            
+          </div>
+          <div class="login-wrapper my-auto">
+            <h1 class="login-title">Log in</h1>
+            <form action="#!">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="email@example.com">
+              </div>
+              <div class="form-group mb-4">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="enter your passsword">
+              </div>
+              <input name="login" id="login" class="btn btn-block login-btn" type="button" value="Login">
+            </form>
+            <a href="../registration-authentication/resetpass.html" class="forgot-password-link">Forgot password?</a>
+            <p class="login-wrapper-footer-text">Don't have an account? <a href="../registration-authentication/signup_page.html" class="text-reset"><b><u><i>Register here</i></u></b></a></p>
+			<br>
+			<p class="login-wrapper-footer-text">Please mail your concerns to gbye8334@gmail.com</p>
 		</div>
-		<div class="row">
-			<div class="col">
-				<!-- <form onsubmit="return validate();">  -->
-				
-					<div class="bind">
-						<label for="email"></label>
-						<i class="fa fa-user" aria-hidden="true"></i>
-						<input type="email" name="email" id="email-id" placeholder="email" required/>
-					</div>
-
-					<div class="bind">
-						<label for="password"></label>
-						<i class="fa fa-lock" aria-hidden="true"></i>
-						<input type="password" name="password" id="password-id" placeholder="password" required/>
-					</div>
-					
-					<div class="link">
-						<button type="submit" class="submit" name="button" id='signin-btn'><a href="../user/profile_user.html" >SignIn</a> </button>        
-					</div>
-				
-			</div>
-		</div>
-        <div class="link">
-			<button type="button" class="submit" name="button" id='forgot-password'><a href="../front/resetpass.html">Forgot password</a></button>
-		</div>
-	</div>
-</div>
-<script src="index.js"></script>
+        </div>
+        <div class="col-sm-6 px-0 d-none d-sm-block">
+          <img src="../image/admin_user5.jpg" alt="login image" class="login-img">
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
