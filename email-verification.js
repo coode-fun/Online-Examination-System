@@ -8,7 +8,7 @@ module.exports=function Mailed(email,id)
     auth: {
     user: 'gbye8334@gmail.com',
     pass: process.env.EMAILPASSWORD
-   
+   // pass: '**************'
   }
 });
 
