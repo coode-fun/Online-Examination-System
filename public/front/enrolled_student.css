@@ -1,0 +1,44 @@
+
+body{
+    margin: 0;
+  
+}
+.navbar-dark {
+    background-color: rgb(150, 173, 179); 
+}
+.row-content{
+    margin: 0px auto;
+    padding-top: 70px;
+    text-align: center;
+}
+
+table{
+    table-layout: fixed;
+    height: 100%;
+    /*margin: 20px auto;*/
+    
+}
+
+table th{
+    align-items: center;
+    text-align: center;
+}
+table  td{
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.bdr{
+    display: flex;
+    border: solid 2px black;
+    border-radius: 2rem;
+}
+
+
+
+
+
+

@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Online Examination System</title>
+    <title>Add details</title>
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,48 +11,22 @@
 
     <!-- Bootstrap CSS -->
      <!-- build:css css/main.css -->
-    <!-- Bootstrap CSS -->
-     <!-- build:css css/main.css -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css"> 
-    <link ref="stylesheet" href="../css/bootstrap-social.css">
-    <link href="./styles.css" rel="stylesheet">
+     <link rel="stylesheet" href="../css/bootstrap.min.css">
+     <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+     <link ref="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css.map">
+     
+    <link href="../front/details.css" rel="stylesheet">
     <!-- endbuild -->
 </head>
 
 <body>
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img src="../image/brightnessicon.png" width="45" class="img-fluid"></a>
-            <div class="collapse navbar-collapse" id="Navbar">
-                <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="D:\Examination System/front/index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../registration-authentication/signin_page.html"><span class="fa fa-sign-in fa-lg">SignIn</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="../registration-authentication/signup_page.html"><span class="fa fa-sign-in fa-lg"></span>SignUp</a></li>
-                        
-                </ul>
-                <span class="navbar-text">
-                    <a href="D:\Examination System/signin_page.html">
-                        <span class="fa fa-sign-in"></span> Login
-                    </a>
-                </span>
-            </div>
-        </div>
-    </nav>
-
+    
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
-                <div class="col-12 col-sm-6">
-                   <h1>Welcome To The Online Examination System</h1>
+                <div class="col-12">
+                   Online Examination System
                    
-                </div>
-                <div class="col-12 col-sm align-self-center">
-                    <img src="C:\Users\Aditya Singh\Desktop\online examinaion system\Online-Examination-System-master\image\book.PNG"  height="90" class="img-fluid">
-
                 </div>
             </div>
         </div>
@@ -61,11 +35,14 @@
     <div class="container">
         <div class="row">
             <ol class="col-12 breadcrumb">
-                <li class="breadcrumb-item">Home</li>
-                <li class="breadcrumb-item">Contact</li>
+                <li class="breadcrumb-item">Details</li>
+                <li class="breadcrumb-item"><a href="../user/profile_user.html">Profile</a></li>
+                <li class="breadcrumb-item"><a href="../front/notification.html">Take Test</a></li>
+                <li class="breadcrumb-item"><a href="../registration-authentication/signin_page.html">Login</a></li>
+                <li class="breadcrumb-item"><a href="../home/admin-user.html">Logout</a></li>
              </ol>
             <div class="col-12">
-               <h3>Welcome To The Test</h3>
+               <h3>Fill your details :)</h3>
                <hr>
             </div>
         </div>
@@ -92,13 +69,10 @@
                     </div> 
                     <div class="form-group row">
                         <label for="telnum" class="col-12 col-md-2" class="col-form-label">Contact Tel.</label>
-                        <div class="col-5 col-md-3">
-                            <input type="tel" class="form-control" id="areacode" name="areacode"
-                                placeholder="Area Code">
-                        </div>
-                        <div class="col-7 col-md-7">
+                        
+                        <div class="col-md-10">
                             <input type="tel" class="form-control" id="telnum" name="telnum"
-                                placeholder="Tel. Number">
+                                placeholder="(+91) xxxxx xxxxx">
                         </div>
                     </div> 
                     <div class="form-group row">
@@ -107,30 +81,42 @@
                             <input type="email" class="form-control" id="email" name="email"
                                 placeholder="Email">
                         </div>
-                    </div> 
-                    <div class="form-group row">
-                        <div class="col-md-6 offset-md-2">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input"
-                                    name="approve" id="approve" value="">
-                                <label class="form-check-label" for="approve">
-                                    <strong>May we contact you?</strong>
-                                </label>
-                            </div>
-
-                        </div>
-                        <div class="col-md-3 offset-md-1">
-                            <select class="form-control">
-                                <option>Tel.</option>
-                                <option>Email</option>
-                            </select>
-                        </div>
                     </div>
+                    
+                    <div class="form-group row">
+                        <label for="feedback" class="col-md-2" class="col-form-label">Department</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="department" name="department"
+                                placeholder="Department">
+                        </div>
+                    </div> 
                     <div class="form-group row">
                         <label for="feedback" class="col-md-2" class="col-form-label">Address</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" id="feedback" name="feedback"
-                                rows="5"></textarea>
+                            <textarea class="form-control" id="address" name="address" placeholder="Address"
+                                rows="2"></textarea>
+
+                        </div>
+                    </div> 
+                    <div class="form-group row">
+                        <label for="feedback" class="col-md-2" class="col-form-label">LinkedIN</label>
+                        <div class="col-md-10">
+                            <input type="link" class="form-control" id="linkedin" name="linkedin" placeholder="LinkedIN"></input>
+
+                        </div>
+                    </div> 
+                    <div class="form-group row">
+                        <label for="feedback" class="col-md-2" class="col-form-label">Github</label>
+                        <div class="col-md-10">
+                            <input type="link" class="form-control" id="github" name="github" placeholder="Github"></input>
+
+                        </div>
+                    </div> 
+                    
+                    <div class="form-group row">
+                        <label for="feedback" class="col-md-2" class="col-form-label">Facebook</label>
+                        <div class="col-md-10">
+                            <input type="link" class="form-control" id="facebook" name="facebook" placeholder="Facebook"></input>
 
                         </div>
                     </div> 
@@ -155,7 +141,7 @@
                 <div class="col-4 offset-1 col-sm-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="../home/admin-user.html">Home</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
@@ -163,7 +149,7 @@
                     <h5>Our Address</h5>
                     <address>
 		              Shibpur, Howrah<br>
-                      <i class="fa fa-phone fa-lg"></i>: 6296786302<br>
+                      <i class="fa fa-phone fa-lg"></i>:(+91) 62967 86302<br>
                       <i class="fa fa-envelope fa-lg"></i>: 
                       <a href="mailto:sayanighosh53498@gmail.com">sayanighosh53498@gmail.com</a>
 		           </address>
@@ -185,24 +171,7 @@
                 </div>
            </div>
         </div>
-    </footer>
-    <script>
-        $("#loginModalToggle").click(function(){
-            $("#loginModal").modal('toggle');
-        });
-
-        $("#reserveModalToggle").click(function(){
-            $("#reserveModal").modal('toggle');
-        });
-    </script>
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-    <!-- build.js js/main.js -->
-    <script src="C:\Coursera\bOGnMCzEEeiTdA5yoE99Fg_6da6f2f02cc411e8b484f7e801bd0278_Bootstrap4-starter\Bootstrap4\conFusion\node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="C:\Coursera\bOGnMCzEEeiTdA5yoE99Fg_6da6f2f02cc411e8b484f7e801bd0278_Bootstrap4-starter\Bootstrap4\conFusion\node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="C:\Coursera\bOGnMCzEEeiTdA5yoE99Fg_6da6f2f02cc411e8b484f7e801bd0278_Bootstrap4-starter\Bootstrap4\conFusion\node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="C:\Coursera\bOGnMCzEEeiTdA5yoE99Fg_6da6f2f02cc411e8b484f7e801bd0278_Bootstrap4-starter\Bootstrap4\conFusion\js/scripts.js"></script>
-    <!-- endbuild -->
+    </footer>    
 </body>
 
 </html>
