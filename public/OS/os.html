@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Quiz App</title>
+        <title>Quiz</title>
         <meta name = "viewport" content="width=device-width,  initial-scale=1">
-        <link rel="stylesheet" href="D:\Examination System/OS/styleos.css">
+        <link rel="stylesheet" href="./styleos.css">
+        
+        
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
      <!-- build:css css/main.css -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css"> 
-    <link ref="stylesheet" href="../css/bootstrap-social.css">
-    
+     <link rel="stylesheet" href="../css/bootstrap.min.css">
+     <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+     <link ref="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css.map">
+     
     <!-- endbuild -->
+    <style>
+        #demo { 
+            font-size: 40px; 
+            width: 350px; 
+            margin-left: 20%;
+            margin-bottom: 1%;
+            text-align: center; 
+            border: 2px solid black; 
+            border-radius: 20px; 
+        } 
+    </style>
     </head>
     <body>
         <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -22,15 +35,23 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="../image/brightnessicon.png" width="45" class="img-fluid"></a>
-                <div class="collapse navbar-collapse" id="Navbar">
-                    <ul class="navbar-nav mr-auto">
-                            <li class="nav-item"><a class="nav-link" href="../user/profile_user.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../Question/quiz.html"><span class="fa fa-question fa-lg"></span>DBMS</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="../OS/os.html"><span class="fa fa-question fa-lg"></span>OS</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-question fa-lg"></span>OOP</a></li>
-                    </ul>
-                </div>
+                <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+                    <div class="container">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="Navbar">
+                            <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item"><a class="nav-link" href="../front/notification.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                            </ul>
+                        </div>
+                        <span class="navbar-text">
+                            <a href="../home/admin-user.html">
+                                <span class="fa fa-sign-in"></span> Logout
+                            </a>
+                        </span>
+                    </div>
+                </nav>
             </div>
         </nav>
         <div class="container">
@@ -42,6 +63,24 @@
                 </div>
             
                 <div class="quiz-box custom-box hide">
+                    <div id="demo">8:10:45</div> 
+                        <script> 
+                            var deadline = new Date("Dec 13, 2020 22:37:25").getTime(); 
+                            var x = setInterval(function() { 
+                            var now = new Date().getTime(); 
+                            var t = deadline - now; 
+                            var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
+                            var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+                            var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+                            var seconds = Math.floor((t % (1000 * 60)) / 1000); 
+                            document.getElementById("demo").innerHTML = days + "d "  
+                            + hours + "h " + minutes + "m " + seconds + "s "; 
+                                if (t < 0) { 
+                                    clearInterval(x); 
+                                    document.getElementById("demo").innerHTML = "EXPIRED"; 
+                                } 
+                            }, 1000); 
+                            </script>     
                     <div class="question-number">
                         
                     </div>
@@ -51,15 +90,24 @@
                     <div class="option-container">
                         
                     </div>
+                    <textarea type="text" class="form-control" id="write_your_answer" name="write_your_answer"
+                                placeholder="Explain your answer"></textarea>
                     <div class="next-question-button">
-                        <button type="button" class="btn" onclick="next()">Next</button>
+                        <div class="col-12">
+                        
+                        <button class="btn hide" id="prev">Previous</button>
+                        
+                        <button class="btn hide" id="next">Next</button>
+                        <button class="btn hide" id="submit"><a href="../front/notification.html">Submit</a></button>
+                        
+                        </div>
                     </div>
                     <div class="answers-indicator">
                         
                     </div>
                 </div>
            
-                <div class="result-box custom-box hide">
+                <!--<div class="result-box custom-box hide">
                     <h1>Quiz Result</h1>
                     <table>
                         <tr>
@@ -92,7 +140,7 @@
                     </table>
                     <button type="button" class="btn" onclick="tryAgainQuiz()">Try Again</button>
                     <button type="button" class="btn" onclick="backToHome()">Go to Home</button>
-                </div>
+                </div>-->
             </div>    
         </div>
 

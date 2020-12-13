@@ -14,7 +14,7 @@ body{
 .custom-box{
     max-width: 700px;
     background-color:#ffffff;
-    margin: 40px auto;
+    margin: 20px auto;
     padding: 30px;
     border-radius: 10px;
     width: 100%; 
@@ -78,6 +78,20 @@ body{
     cursor: pointer;
     display: inline-block;
 }
+.btn.hide{
+    display: none;
+}
+.btn a{
+    color: white;
+}
+.btn a:hover{
+    color: yellow;
+    text-decoration: none;
+}
+.btn:hover{
+    background-color: #24504b;
+    color: yellow;
+}
 
 .quiz-box .question-number,
 .quiz-box .question-text,
@@ -135,7 +149,7 @@ body{
         opacity: 1;
     }
 }
-.quiz-box .option-container .option.correct::before{
+/*.quiz-box .option-container .option.correct::before{
     content: '';
     position: absolute;
     left: 0;
@@ -171,7 +185,31 @@ body{
 }
 .quiz-box .option-container .option.wrong{
     color: #ffffff;
+}*/
+
+.quiz-box .option-container .option.marked::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgb(113, 151, 149);
+    height: 100%;
+    z-index: -1;
+    animation: slideInLeft .5s ease forwards;
 }
+@keyframes slideInLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.quiz-box .option-container .option.marked{
+    color: #ffffff;
+}
+
 
 .quiz-box .btn{
     margin: 15px 0;
@@ -191,22 +229,33 @@ body{
     margin-top: 15px;
 }
 
-.quiz-box .answers-indicator div.correct{
+/*.quiz-box .answers-indicator div.correct{
     background-color: green;
-    background-image: url("D:\Examination System\image/wrong.png");
+    background-image: url("image/wrong.png");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .quiz-box .answers-indicator div.wrong{
     background-color:red;
-    background-image: url("D:\Examination System\image/correct.png");
+    background-image: url("image/correct.png");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
+*/
+.quiz-box .answers-indicator div.marked{
+    background-color: rgb(201, 201, 113);
+    /*background-image: url("../image/mark.png");*/
+    font-size: 25px;
+    text-align: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: black;
+}
 
-.result-box{
+/*.result-box{
     text-align: center;
     background-color: whitesmoke;
 }
@@ -245,7 +294,7 @@ body{
     body{
         padding: 15px;
     }
-}
+}*/
 
 
 
