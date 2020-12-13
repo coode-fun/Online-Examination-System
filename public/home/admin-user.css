@@ -4,7 +4,7 @@ body{
 }
 
 .row-content{
-    background-image: url("../image/home1.jpg");
+    background-image: url("../image/admin_user5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height:624px;
@@ -26,3 +26,6 @@ a{
     background-color: rgb(223, 221, 106);
     
 }
+
+
+
